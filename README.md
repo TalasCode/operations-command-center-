@@ -23,7 +23,7 @@ npm install
 npm run db:push
 ```
 
-`db:push` initializes the SQLite schema from the checked-in SQL at [prisma/init.sql](/c:/Users/talaj/OneDrive/Desktop/new_work/c.monkeyTribe_exercice/prisma/init.sql). Prisma Client remains the runtime data-access layer used by the app and tests.
+`db:push` initializes the SQLite schema from the checked-in SQL at `prisma/init.sql`. Prisma Client remains the runtime data-access layer used by the app and tests.
 
 3. Start the app:
 
@@ -90,6 +90,24 @@ tests/
 ```
 
 ## Architecture
+
+```text
+Event Simulator
+      ↓
+API Routes
+      ↓
+Workflow Engine
+      ↓
+Adapter Registry
+      ↓
+FinanceAdapter | CampaignAdapter | GuestAdapter
+      ↓
+Mock Services
+      ↓
+SQLite + Prisma
+      ↓
+Audit Logs + Review Queue
+```
 
 ### Workflow engine
 
