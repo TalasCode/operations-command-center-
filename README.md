@@ -17,7 +17,21 @@ Internal operations dashboard built from the exercise PDF as the source of truth
 npm install
 ```
 
-2. Initialize the SQLite database:
+2. Create the local environment file:
+
+On macOS / Linux:
+
+```bash
+cp .env.example .env
+```
+
+On Windows PowerShell:
+
+```powershell
+Copy-Item .env.example .env
+```
+
+3. Initialize the SQLite database:
 
 ```bash
 npm run db:push
@@ -25,13 +39,13 @@ npm run db:push
 
 `db:push` initializes the SQLite schema from the checked-in SQL at `prisma/init.sql`. Prisma Client remains the runtime data-access layer used by the app and tests.
 
-3. Start the app:
+4. Start the app:
 
 ```bash
 npm run dev
 ```
 
-4. Open `http://localhost:3000`
+5. Open `http://localhost:3000`
 
 ## Run Tests
 
@@ -237,10 +251,3 @@ Intentional scope decisions for the one-day timebox:
 - No background job runner; workflow execution happens inline when an event is submitted.
 - Action editing uses JSON instead of a richer form builder to keep the review workflow flexible.
 
-If I had more time, the next steps would be:
-
-- add pagination and saved filter state
-- separate execution retries into a job layer
-- add stronger schema validation with field-level UI errors
-- add richer review audit semantics and retry counts
-- add Playwright coverage for key UI flows
