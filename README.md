@@ -1,6 +1,6 @@
 # Operations Command Center
 
-Internal operations dashboard built from the exercise PDF as the source of truth. It implements a shared workflow engine, stream-specific adapters, persisted state with Prisma + SQLite, a review queue, audit trail, simulator, and the required test coverage.
+Internal operations dashboard implements a shared workflow engine, stream-specific adapters, persisted state with Prisma + SQLite, a review queue, audit trail, simulator, and the required test coverage.
 
 ## Stack
 
